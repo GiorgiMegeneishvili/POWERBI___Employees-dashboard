@@ -1,0 +1,45 @@
+1️⃣ Employee Count
+Total Employees = COUNTROWS(employees)
+
+Active Employees = CALCULATE(
+    COUNTROWS(employees),
+    employees[employment_status] = "Active"
+)
+
+
+  
+
+2️⃣ Average Salary
+
+Average Salary = AVERAGE(employees[salary])
+Average Salary Active = CALCULATE(
+    AVERAGE(employees[salary]),
+    employees[employment_status] = "Active"
+)
+
+
+
+3️⃣ Total Payroll
+Total Payroll = SUM(employees[salary])
+Total Payroll with Bonus = SUM(employees[salary]) + SUM(employees[bonus])
+
+
+4️⃣ Average Bonus
+Average Bonus = AVERAGE(employees[bonus])
+
+
+  5️⃣ Terminated Employee Count
+Terminated Employees = CALCULATE(
+    COUNTROWS(employees),
+    employees[employment_status] = "Terminated"
+)
+
+  
+6️⃣ Headcount by Departme9️⃣ Average Age
+✅ First, calculated column:
+Age = DATEDIFF(employees[date_of_birth], TODAY(), YEAR)
+  ✅ Then measure:
+Average Age = AVERAGE(employees[Age])
+  
+
+
